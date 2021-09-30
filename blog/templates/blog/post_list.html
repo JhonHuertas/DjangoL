@@ -7,22 +7,12 @@
     <header>
         <h1>Blog Django</h1>
     </header>
-    <article>
-        <time>published: 29.09.2021, 11:51</time>
-        <h2><a href="">Primer post</a> </h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, earum.</p>
-    </article>
-    <article>
-        <time>published: 29.09.2021, 11:51</time>
-        <h2><a href="">Segundo post</a></h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex corrupti neque vitae nam! Velit, placeat?</p>
-    </article>
-    <article>
-        <time></time>
-        <h2></h2>
-        <p></p>
-    </article>
-    <!-- <p>Primer Template</p>
-    <p>Funciona!</p>     -->
+    {% for post in posts %} 
+        <article>
+        <time>published: {{ post.published_date }}</time>
+        <h2><a href="">{{ post.title }}</a></h2>
+        <p>{{ post.text | linebreaksbr }}</p>
+        </article> 
+    {% endfor %}
 </body>
 </html>
