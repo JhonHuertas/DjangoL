@@ -8,4 +8,11 @@
         <h2>{{ post.title }}</h2>
         <p>{{ post.text | linebreaksbr }}</p>
     </article>
+    <aside class="actions">
+            <a href="{% url 'post_edit' pk=post.pk %}" class="btn btn-default">
+                {% include './icons/pencil-fill.svg' %}
+            </a>
+        {% if user.is_authenticated %}
+        {% endif %}
+    </aside>
 {% endblock  %}
